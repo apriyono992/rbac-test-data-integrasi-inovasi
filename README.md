@@ -59,7 +59,7 @@ Project backend sederhana yang mengelola autentikasi user (JWT) dan Role base ac
 
 ## 📊 Entity Relationship Diagram (ERD)
 ![ERD Diagram](docs/RBAC-test-data-integrasi-inovasi.drawio.png)
-
+https://drive.google.com/file/d/1R4NYjpCPatjaaaGqd6siG-jT5A66yhRQ/view
 ---
 
 ## 🚀 Dokumentasi Fitur & API Endpoint
