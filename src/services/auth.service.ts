@@ -1,24 +1,24 @@
 import { Injectable } from '@nestjs/common';
+import { User } from '../entities/user.entity';
+import { UsersService } from './users.service';
+import { JwtService } from '@nestjs/jwt';
+import { Role } from '../entities/role.entity';
 
 @Injectable()
 export class AuthService {
-  create(createAuthDto: any) {
-    return 'This action adds a new auth';
+  constructor(
+    private jwtService: JwtService,
+  ) {
   }
+  async login(user: User, role: Role) {
+    const payload = {
+      sub: user.id,
+      username: user.username,
+      role: role.name,
+    };
 
-  findAll() {
-    return `This action returns all auth`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} auth`;
-  }
-
-  update(id: number, updateAuthDto: any) {
-    return `This action updates a #${id} auth`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} auth`;
+    return {
+      access_token: this.jwtService.sign(payload),
+    };
   }
 }

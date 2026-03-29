@@ -1,0 +1,2832 @@
+{
+  "info": {
+    "_postman_id": "012a391a-fbd4-4ad4-96dd-dd5ee7574af9",
+    "name": "rbac-data-integrasi-inovasi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "18356591"
+  },
+  "item": [
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"test_update\",\r\n  \"password\": \"test123\",\r\n  \"fullName\": \"Test update\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/users",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Bad req",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"Test\",\r\n  \"password\": \"test123\",\r\n  \"fullName\": \"Testing\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/users",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "users"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "93"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"5d-3umnPP8cYQav8Uz6U0pKWxO4u9c\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 06:03:06 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"user with username Test is already exist\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+            },
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"Test\",\r\n  \"password\": \"test123\",\r\n  \"fullName\": \"Testing\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/users",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "users"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "62"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3e-tTYkd/maIbI0Hcfcx4YDqUkqp4o\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 06:04:10 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"bcf61543-065a-4b3f-aca2-9d0fe8d6065f\",\n    \"name\": \"Testing\"\n}"
+            },
+            {
+              "name": "invalid username",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"test update\",\r\n  \"password\": \"test123\",\r\n  \"fullName\": \"Test update\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/users",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "users"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "150"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"96-cM2K77lMr61/4PDKs5Blu5QNtc0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 06:33:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": [\n        \"username harus camelCase, diawali huruf kecil dan hanya boleh huruf, simbol & angka tanpa spasi\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"updated_1\",\r\n  \"password\": \"test123\",\r\n  \"fullName\": \"Testing terupdate\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/users/:id",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "348c6bda-37fa-4117-ac5b-f984312ef677"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "bad req",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"updated_1\",\r\n  \"password\": \"test123\",\r\n  \"fullName\": \"Testing terupdate\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/users/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "348c6bda-37fa-4117-ac5b-f984312ef677"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "98"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"62-+hWhPdNrj9VwsU9iGKCaCJyN3qo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 06:13:45 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"user with username updated_1 is already exist\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+            },
+            {
+              "name": "update",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"updated_1\",\r\n  \"password\": \"test123\",\r\n  \"fullName\": \"Testing terupdate\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/users/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "348c6bda-37fa-4117-ac5b-f984312ef677"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "110"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"6e-sC0WvrgIyipTO5Db4fZFthl95FE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 06:15:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"348c6bda-37fa-4117-ac5b-f984312ef677\",\n    \"username\": \"updated_1\",\n    \"fullName\": \"Testing terupdate\",\n    \"roles\": []\n}"
+            },
+            {
+              "name": "invalid username",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"username\": \"updated _1\",\r\n  \"password\": \"test123\",\r\n  \"fullName\": \"Testing terupdate\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/users/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "348c6bda-37fa-4117-ac5b-f984312ef677"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "150"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"96-cM2K77lMr61/4PDKs5Blu5QNtc0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 06:33:51 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": [\n        \"username harus camelCase, diawali huruf kecil dan hanya boleh huruf, simbol & angka tanpa spasi\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+            }
+          ]
+        },
+        {
+          "name": "remove",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{HOST}}/users/:id",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "71bf9ee1-9b23-4deb-9537-a19b5411508a"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "remove",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{HOST}}/users/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "71bf9ee1-9b23-4deb-9537-a19b5411508a"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "42"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2a-mp76xueJwuBg6SC3F/3HJjTMrec\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 06:16:53 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"generatedMaps\": [],\n    \"raw\": [],\n    \"affected\": 1\n}"
+            }
+          ]
+        },
+        {
+          "name": "all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOST}}/users",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{HOST}}/users",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "users"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "762"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2fa-amfhbGzLsmEQpH5X6LD0e0eBgM4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 06:07:00 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"d3aab197-0b34-48d4-8d3f-d0c238d02934\",\n        \"username\": \"admin\",\n        \"fullName\": null,\n        \"roles\": [\n            {\n                \"id\": \"bd3b7ef0-2615-4771-bd0a-57724bca7763\",\n                \"created_at\": \"2026-03-29T01:13:55.153Z\",\n                \"updated_at\": \"2026-03-29T01:13:55.153Z\",\n                \"deleted_at\": null,\n                \"name\": \"admin\"\n            }\n        ]\n    },\n    {\n        \"id\": \"74ac9a86-c073-44b5-ab4f-f000742fb4a9\",\n        \"username\": \"john\",\n        \"fullName\": \"John Doe\",\n        \"roles\": [\n            {\n                \"id\": \"1048cc7d-f9ec-4c5b-adb3-63285a2384e1\",\n                \"created_at\": \"2026-03-29T02:55:48.055Z\",\n                \"updated_at\": \"2026-03-29T02:55:48.055Z\",\n                \"deleted_at\": null,\n                \"name\": \"MANAGER\"\n            },\n            {\n                \"id\": \"de5509b3-3be1-43ef-abf5-d6482c1fe5d3\",\n                \"created_at\": \"2026-03-29T02:55:48.073Z\",\n                \"updated_at\": \"2026-03-29T02:55:48.073Z\",\n                \"deleted_at\": null,\n                \"name\": \"USER\"\n            }\n        ]\n    },\n    {\n        \"id\": \"bcf61543-065a-4b3f-aca2-9d0fe8d6065f\",\n        \"username\": \"Test\",\n        \"fullName\": \"Testing\",\n        \"roles\": []\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "detail",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOST}}/users/:id",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "d3aab197-0b34-48d4-8d3f-d0c238d02934"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "detail",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{HOST}}/users/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "d3aab197-0b34-48d4-8d3f-d0c238d02934"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "249"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"f9-H0sX7lrdYMua6ikb4V9J4xj+Khg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 06:08:54 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"d3aab197-0b34-48d4-8d3f-d0c238d02934\",\n    \"username\": \"admin\",\n    \"fullName\": null,\n    \"roles\": [\n        {\n            \"id\": \"bd3b7ef0-2615-4771-bd0a-57724bca7763\",\n            \"created_at\": \"2026-03-29T01:13:55.153Z\",\n            \"updated_at\": \"2026-03-29T01:13:55.153Z\",\n            \"deleted_at\": null,\n            \"name\": \"admin\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "assign-role",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\": \"bcf61543-065a-4b3f-aca2-9d0fe8d6065f\",\r\n  \"roleIds\": [\"1048cc7d-f9ec-4c5b-adb3-63285a2384e1\", \"de5509b3-3be1-43ef-abf5-d6482c1fe5d3\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/users/assign-role",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "users",
+                "assign-role"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "assign-role",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\": \"bcf61543-065a-4b3f-aca2-9d0fe8d6065f\",\r\n  \"roleIds\": [\"1048cc7d-f9ec-4c5b-adb3-63285a2384e1\", \"de5509b3-3be1-43ef-abf5-d6482c1fe5d3\"]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/users/assign-role",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "users",
+                    "assign-role"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "585"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"249-7NkwrPqLfBYg/paQoVpH8a98K2I\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 06:21:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"bcf61543-065a-4b3f-aca2-9d0fe8d6065f\",\n    \"created_at\": \"2026-03-29T06:04:09.797Z\",\n    \"updated_at\": \"2026-03-29T06:04:09.797Z\",\n    \"deleted_at\": null,\n    \"username\": \"Test\",\n    \"password\": \"$2b$10$/zLtybxRV26eiTMw6W6wZOIPP9GC/2KXkx1aq19seI.UsQWXOBqUy\",\n    \"fullName\": \"Testing\",\n    \"roles\": [\n        {\n            \"id\": \"1048cc7d-f9ec-4c5b-adb3-63285a2384e1\",\n            \"created_at\": \"2026-03-29T02:55:48.055Z\",\n            \"updated_at\": \"2026-03-29T02:55:48.055Z\",\n            \"deleted_at\": null,\n            \"name\": \"MANAGER\"\n        },\n        {\n            \"id\": \"de5509b3-3be1-43ef-abf5-d6482c1fe5d3\",\n            \"created_at\": \"2026-03-29T02:55:48.073Z\",\n            \"updated_at\": \"2026-03-29T02:55:48.073Z\",\n            \"deleted_at\": null,\n            \"name\": \"USER\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "role",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Test\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/roles",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "roles"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Test\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/roles",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "roles"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "157"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"9d-q7bjpPP3zRChlZjifQHzyWttg2Y\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:33:13 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"41aff94b-c1f7-4530-b3ab-ba4a3de2bf63\",\n    \"created_at\": \"2026-03-29T05:33:13.059Z\",\n    \"updated_at\": \"2026-03-29T05:33:13.059Z\",\n    \"deleted_at\": null,\n    \"name\": \"Test\"\n}"
+            },
+            {
+              "name": "bad request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Test\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/roles",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "roles"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "89"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"59-rLOB8yShbFl7yY/yJMSaQ9w02U8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:35:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"role with name Test is already exist\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+            }
+          ]
+        },
+        {
+          "name": "all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOST}}/roles",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "roles"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "all",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{HOST}}/roles",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "roles"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "637"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"27d-1IFtRXqeUIUJdQ+gu60bjqGwHIE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:37:43 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"bd3b7ef0-2615-4771-bd0a-57724bca7763\",\n        \"created_at\": \"2026-03-29T01:13:55.153Z\",\n        \"updated_at\": \"2026-03-29T01:13:55.153Z\",\n        \"deleted_at\": null,\n        \"name\": \"admin\"\n    },\n    {\n        \"id\": \"1048cc7d-f9ec-4c5b-adb3-63285a2384e1\",\n        \"created_at\": \"2026-03-29T02:55:48.055Z\",\n        \"updated_at\": \"2026-03-29T02:55:48.055Z\",\n        \"deleted_at\": null,\n        \"name\": \"MANAGER\"\n    },\n    {\n        \"id\": \"de5509b3-3be1-43ef-abf5-d6482c1fe5d3\",\n        \"created_at\": \"2026-03-29T02:55:48.073Z\",\n        \"updated_at\": \"2026-03-29T02:55:48.073Z\",\n        \"deleted_at\": null,\n        \"name\": \"USER\"\n    },\n    {\n        \"id\": \"41aff94b-c1f7-4530-b3ab-ba4a3de2bf63\",\n        \"created_at\": \"2026-03-29T05:33:13.059Z\",\n        \"updated_at\": \"2026-03-29T05:33:13.059Z\",\n        \"deleted_at\": null,\n        \"name\": \"Test\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "detail",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOST}}/roles/:id",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "roles",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "de5509b3-3be1-43ef-abf5-d6482c1fe5d3"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "detail",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{HOST}}/roles/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "roles",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "de5509b3-3be1-43ef-abf5-d6482c1fe5d3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "157"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"9d-TUKN4VwhinSICjgs1lMYw0zwLak\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:38:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"de5509b3-3be1-43ef-abf5-d6482c1fe5d3\",\n    \"created_at\": \"2026-03-29T02:55:48.073Z\",\n    \"updated_at\": \"2026-03-29T02:55:48.073Z\",\n    \"deleted_at\": null,\n    \"name\": \"USER\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"test udpate\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/roles/update/:id",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "roles",
+                "update",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "41aff94b-c1f7-4530-b3ab-ba4a3de2bf63"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"test udpate\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/roles/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "roles",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "41aff94b-c1f7-4530-b3ab-ba4a3de2bf63"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "164"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"a4-DeSJuCYeM7xIMKB/jggT8Sjefoo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:46:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"41aff94b-c1f7-4530-b3ab-ba4a3de2bf63\",\n    \"created_at\": \"2026-03-29T05:33:13.059Z\",\n    \"updated_at\": \"2026-03-29T05:46:23.893Z\",\n    \"deleted_at\": null,\n    \"name\": \"test udpate\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "update-access",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"menuIds\":[10,20,1,5]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/roles/update-access/:id",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "roles",
+                "update-access",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "41aff94b-c1f7-4530-b3ab-ba4a3de2bf63"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "update-access",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"menuIds\":[10,20,1,5]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/roles/update-access/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "roles",
+                    "update-access",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "41aff94b-c1f7-4530-b3ab-ba4a3de2bf63"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "724"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2d4-j429rtA5zzpajL3+8s/qBhA9hkE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:52:38 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"41aff94b-c1f7-4530-b3ab-ba4a3de2bf63\",\n    \"created_at\": \"2026-03-29T05:33:13.059Z\",\n    \"updated_at\": \"2026-03-29T05:50:28.683Z\",\n    \"deleted_at\": null,\n    \"name\": \"test udpate\",\n    \"menus\": [\n        {\n            \"id\": 1,\n            \"name\": \"Menu 1\",\n            \"path\": \"1\",\n            \"created_at\": \"2026-03-29T01:13:55.232Z\",\n            \"updated_at\": \"2026-03-29T01:13:55.232Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Menu 1.2.2\",\n            \"path\": \"1.2.2\",\n            \"created_at\": \"2026-03-29T01:13:55.246Z\",\n            \"updated_at\": \"2026-03-29T01:13:55.246Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Menu 2.2\",\n            \"path\": \"2.2\",\n            \"created_at\": \"2026-03-29T01:13:55.260Z\",\n            \"updated_at\": \"2026-03-29T01:13:55.260Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Menu 4\",\n            \"path\": \"4\",\n            \"created_at\": \"2026-03-29T05:09:29.805Z\",\n            \"updated_at\": \"2026-03-29T05:09:29.805Z\",\n            \"deleted_at\": null\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "get-access",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"menuIds\":[10,20,1,5]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/roles/access/:id",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "roles",
+                "access",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "41aff94b-c1f7-4530-b3ab-ba4a3de2bf63"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get-access",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"menuIds\":[10,20,1,5]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/roles/access/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "roles",
+                    "access",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "41aff94b-c1f7-4530-b3ab-ba4a3de2bf63"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "746"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2ea-Jo8UI5Ks6rgdarbGJlq8HrOX1w0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:54:01 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"41aff94b-c1f7-4530-b3ab-ba4a3de2bf63\",\n    \"created_at\": \"2026-03-29T05:33:13.059Z\",\n    \"updated_at\": \"2026-03-29T05:50:28.683Z\",\n    \"deleted_at\": null,\n    \"name\": \"test udpate\",\n    \"menus\": [\n        {\n            \"id\": 1,\n            \"name\": \"Menu 1\",\n            \"path\": \"1\",\n            \"created_at\": \"2026-03-29T01:13:55.232Z\",\n            \"updated_at\": \"2026-03-29T01:13:55.232Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Menu 1.2.2\",\n            \"path\": \"1.2.2\",\n            \"created_at\": \"2026-03-29T01:13:55.246Z\",\n            \"updated_at\": \"2026-03-29T01:13:55.246Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Menu 2.2\",\n            \"path\": \"2.2\",\n            \"created_at\": \"2026-03-29T01:13:55.260Z\",\n            \"updated_at\": \"2026-03-29T01:13:55.260Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Menu 4\",\n            \"path\": \"4\",\n            \"created_at\": \"2026-03-29T05:09:29.805Z\",\n            \"updated_at\": \"2026-03-29T05:09:29.805Z\",\n            \"deleted_at\": null\n        }\n    ],\n    \"menuIds\": [\n        1,\n        5,\n        10,\n        20\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "soft delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{HOST}}/roles/:id",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "roles",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "ed4a1fc7-61ac-4c28-823e-405fed384b79"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{HOST}}/roles/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "roles",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "ed4a1fc7-61ac-4c28-823e-405fed384b79"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "42"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2a-mp76xueJwuBg6SC3F/3HJjTMrec\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:48:20 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"generatedMaps\": [],\n    \"raw\": [],\n    \"affected\": 1\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "item": [
+        {
+          "name": "menuByRole",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOST}}/menus/my-menu",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "menus",
+                "my-menu"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "role user",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin123\"\r\n}"
+                },
+                "url": {
+                  "raw": "{{HOST}}/menus",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "842"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"34a-2Ulee8NCZJV7eNldPKpI4RLvE5Y\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 03:24:14 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Menu 1\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Menu 1.1\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Menu 1.2\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Menu 1.2.1\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Menu 1.2.2\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Menu 1.3\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Menu 1.3.1\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 8,\n        \"name\": \"Menu 2\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 9,\n        \"name\": \"Menu 2.1\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 10,\n        \"name\": \"Menu 2.2\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 11,\n        \"name\": \"Menu 2.2.1\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 12,\n        \"name\": \"Menu 2.2.2\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 13,\n        \"name\": \"Menu 2.2.2.1\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 14,\n        \"name\": \"Menu 2.2.2.2\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 15,\n        \"name\": \"Menu 2.2.3\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 16,\n        \"name\": \"Menu 2.3\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 17,\n        \"name\": \"Menu 3\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 18,\n        \"name\": \"Menu 3.1\",\n        \"parentId\": null\n    },\n    {\n        \"id\": 19,\n        \"name\": \"Menu 3.2\",\n        \"parentId\": null\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "menu all tree",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOST}}/menus/tree",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "menus",
+                "tree"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "forbidden response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{HOST}}/menus/tree",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus",
+                    "tree"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "69"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"45-MZJWZc+Y+RUbHpnhz2B2Vipii24\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 04:39:12 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Forbidden resource\",\n    \"error\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+            },
+            {
+              "name": "success response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{HOST}}/menus/tree",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus",
+                    "tree"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1321"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"529-+ZizIj2NusYqqZfsKGdlzaM3YPg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 04:42:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Menu 1\",\n        \"path\": \"1\",\n        \"parentId\": null,\n        \"children\": [\n            {\n                \"id\": 2,\n                \"name\": \"Menu 1.1\",\n                \"path\": \"1.1\",\n                \"parentId\": 1,\n                \"children\": []\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Menu 1.2\",\n                \"path\": \"1.2\",\n                \"parentId\": 1,\n                \"children\": [\n                    {\n                        \"id\": 4,\n                        \"name\": \"Menu 1.2.1\",\n                        \"path\": \"1.2.1\",\n                        \"parentId\": 3,\n                        \"children\": []\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"Menu 1.2.2\",\n                        \"path\": \"1.2.2\",\n                        \"parentId\": 3,\n                        \"children\": []\n                    }\n                ]\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Menu 1.3\",\n                \"path\": \"1.3\",\n                \"parentId\": 1,\n                \"children\": [\n                    {\n                        \"id\": 7,\n                        \"name\": \"Menu 1.3.1\",\n                        \"path\": \"1.3.1\",\n                        \"parentId\": 6,\n                        \"children\": []\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"id\": 8,\n        \"name\": \"Menu 2\",\n        \"path\": \"2\",\n        \"parentId\": null,\n        \"children\": [\n            {\n                \"id\": 9,\n                \"name\": \"Menu 2.1\",\n                \"path\": \"2.1\",\n                \"parentId\": 8,\n                \"children\": []\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Menu 2.2\",\n                \"path\": \"2.2\",\n                \"parentId\": 8,\n                \"children\": [\n                    {\n                        \"id\": 11,\n                        \"name\": \"Menu 2.2.1\",\n                        \"path\": \"2.2.1\",\n                        \"parentId\": 10,\n                        \"children\": []\n                    },\n                    {\n                        \"id\": 12,\n                        \"name\": \"Menu 2.2.2\",\n                        \"path\": \"2.2.2\",\n                        \"parentId\": 10,\n                        \"children\": [\n                            {\n                                \"id\": 13,\n                                \"name\": \"Menu 2.2.2.1\",\n                                \"path\": \"2.2.2.1\",\n                                \"parentId\": 12,\n                                \"children\": []\n                            },\n                            {\n                                \"id\": 14,\n                                \"name\": \"Menu 2.2.2.2\",\n                                \"path\": \"2.2.2.2\",\n                                \"parentId\": 12,\n                                \"children\": []\n                            }\n                        ]\n                    },\n                    {\n                        \"id\": 15,\n                        \"name\": \"Menu 2.2.3\",\n                        \"path\": \"2.2.3\",\n                        \"parentId\": 10,\n                        \"children\": []\n                    }\n                ]\n            },\n            {\n                \"id\": 16,\n                \"name\": \"Menu 2.3\",\n                \"path\": \"2.3\",\n                \"parentId\": 8,\n                \"children\": []\n            }\n        ]\n    },\n    {\n        \"id\": 17,\n        \"name\": \"Menu 3\",\n        \"path\": \"3\",\n        \"parentId\": null,\n        \"children\": [\n            {\n                \"id\": 18,\n                \"name\": \"Menu 3.1\",\n                \"path\": \"3.1\",\n                \"parentId\": 17,\n                \"children\": []\n            },\n            {\n                \"id\": 19,\n                \"name\": \"Menu 3.2\",\n                \"path\": \"3.2\",\n                \"parentId\": 17,\n                \"children\": []\n            }\n        ]\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Menu 4\",\r\n    \"path\":\"4\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/menus",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "menus"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "create",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Menu 4\",\r\n    \"path\":\"4\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/menus",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "134"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"86-VvnPhwMFO1+66omQ/dDkwx7cDnc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:09:29 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 20,\n    \"name\": \"Menu 4\",\n    \"path\": \"4\",\n    \"created_at\": \"2026-03-29T05:09:29.805Z\",\n    \"updated_at\": \"2026-03-29T05:09:29.805Z\",\n    \"deleted_at\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "create child",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Menu 4.1\",\r\n    \"path\":\"4.1\",\r\n    \"parentId\": 20\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/menus",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "menus"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "create child",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Menu 4.1\",\r\n    \"path\":\"4.1\",\r\n    \"parentId\": 20\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/menus",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "282"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"11a-8XkePF3Zzi7P8KzOJSvC9q3mojg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:12:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 22,\n    \"name\": \"Menu 4.1\",\n    \"path\": \"4.1\",\n    \"parent\": {\n        \"id\": 20,\n        \"name\": \"Menu 4\",\n        \"path\": \"4\",\n        \"created_at\": \"2026-03-29T05:09:29.805Z\",\n        \"updated_at\": \"2026-03-29T05:09:29.805Z\",\n        \"deleted_at\": null\n    },\n    \"created_at\": \"2026-03-29T05:12:22.092Z\",\n    \"updated_at\": \"2026-03-29T05:12:22.092Z\",\n    \"deleted_at\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Menu 4.2\",\r\n    \"path\":\"4.2\",\r\n    \"parentId\": 22\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/menus/:id",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "menus",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "22"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "parent not found",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Menu 4.2\",\r\n    \"path\":\"4.2\",\r\n    \"parentId\": 200\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/menus/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "22"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "83"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"53-GavayjhFZgqyvYnSwqwxogAS4u4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:13:46 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Parent menu baru tidak ditemukan\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
+            },
+            {
+              "name": "updated",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Menu 4.2\",\r\n    \"path\":\"4.2\",\r\n    \"parentId\": 17\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/menus/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "22"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "282"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"11a-5axc2M4vR2ZZayca9De+MALKc4Y\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:14:13 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 22,\n    \"name\": \"Menu 4.2\",\n    \"path\": \"4.2\",\n    \"parent\": {\n        \"id\": 17,\n        \"name\": \"Menu 3\",\n        \"path\": \"3\",\n        \"created_at\": \"2026-03-29T01:13:55.277Z\",\n        \"updated_at\": \"2026-03-29T01:13:55.277Z\",\n        \"deleted_at\": null\n    },\n    \"created_at\": \"2026-03-29T05:12:22.092Z\",\n    \"updated_at\": \"2026-03-29T05:14:13.774Z\",\n    \"deleted_at\": null\n}"
+            },
+            {
+              "name": "parent id same with it self",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Menu 4.2\",\r\n    \"path\":\"4.2\",\r\n    \"parentId\": 22\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/menus/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "22"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "105"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"69-kX60pyQjF1rONkOm6wn1ePt37hc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:14:59 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Menu tidak bisa menjadi parent untuk dirinya sendiri\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+            },
+            {
+              "name": "become parent",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Menu 4.2\",\r\n    \"path\":\"4.2\",\r\n    \"parentId\": null\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/menus/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "22"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "152"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"98-KLRrCBg6YdMajPo1cheRuBEpuMI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:17:04 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 22,\n    \"name\": \"Menu 4.2\",\n    \"path\": \"4.2\",\n    \"parent\": null,\n    \"created_at\": \"2026-03-29T05:12:22.092Z\",\n    \"updated_at\": \"2026-03-29T05:17:04.406Z\",\n    \"deleted_at\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{HOST}}/menus/:id",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "menus",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "23"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "parent not found",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Menu 4.2\",\r\n    \"path\":\"4.2\",\r\n    \"parentId\": 200\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/menus/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "22"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "83"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"53-GavayjhFZgqyvYnSwqwxogAS4u4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:13:46 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Parent menu baru tidak ditemukan\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
+            },
+            {
+              "name": "updated",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Menu 4.2\",\r\n    \"path\":\"4.2\",\r\n    \"parentId\": 17\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/menus/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "22"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "282"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"11a-5axc2M4vR2ZZayca9De+MALKc4Y\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:14:13 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 22,\n    \"name\": \"Menu 4.2\",\n    \"path\": \"4.2\",\n    \"parent\": {\n        \"id\": 17,\n        \"name\": \"Menu 3\",\n        \"path\": \"3\",\n        \"created_at\": \"2026-03-29T01:13:55.277Z\",\n        \"updated_at\": \"2026-03-29T01:13:55.277Z\",\n        \"deleted_at\": null\n    },\n    \"created_at\": \"2026-03-29T05:12:22.092Z\",\n    \"updated_at\": \"2026-03-29T05:14:13.774Z\",\n    \"deleted_at\": null\n}"
+            },
+            {
+              "name": "parent id same with it self",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\":\"Menu 4.2\",\r\n    \"path\":\"4.2\",\r\n    \"parentId\": 22\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{HOST}}/menus/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "22"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "105"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"69-kX60pyQjF1rONkOm6wn1ePt37hc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:14:59 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Menu tidak bisa menjadi parent untuk dirinya sendiri\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+            },
+            {
+              "name": "delete",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{HOST}}/menus/:id",
+                  "host": [
+                    "{{HOST}}"
+                  ],
+                  "path": [
+                    "menus",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "23"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "42"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2a-mp76xueJwuBg6SC3F/3HJjTMrec\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 29 Mar 2026 05:18:10 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"generatedMaps\": [],\n    \"raw\": [],\n    \"affected\": 1\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let jsonData = {};\r",
+              "try {\r",
+              "    jsonData = pm.response.json();\r",
+              "} catch (err) {\r",
+              "    console.log(\"⚠️ Response bukan JSON\", err);\r",
+              "}\r",
+              "\r",
+              "if (jsonData.access_token) {\r",
+              "    pm.environment.set(\"token\", jsonData.access_token);\r",
+              "    console.log(\"✅ Token disimpan:\", jsonData.access_token);\r",
+              "} else if (jsonData.userId) {\r",
+              "    // 2️⃣ kalau ga ada token, simpan userId aja\r",
+              "    pm.environment.set(\"user\", jsonData.userId);\r",
+              "    console.log(\"ℹ️ Token ga ada, simpan userId:\", jsonData.userId);\r",
+              "} else {\r",
+              "    console.log(\"⚠️ Response ga ada token maupun userId\");\r",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{HOST}}/auth/login",
+          "host": [
+            "{{HOST}}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "login",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/auth/login",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "252"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"fc-vtvB4u009+czWLdpYDZvWQ3r58Q\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 29 Mar 2026 02:20:24 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkM2FhYjE5Ny0wYjM0LTQ4ZDQtOGQzZi1kMGMyMzhkMDI5MzQiLCJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzc0NzUwODI0LCJleHAiOjE3NzQ4MzcyMjR9.SgO4-mBbMxfj8DCk0nlC5-S_x_7IP_SfD2N6xRwUGHY\"\n}"
+        },
+        {
+          "name": "select-role",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\":\"john\",\r\n    \"password\":\"john123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/auth/login",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "206"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"ce-c4QEo7JOUJjn0G2guKMgag9Eq4s\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 29 Mar 2026 03:07:19 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Select role\",\n    \"roles\": [\n        {\n            \"id\": \"1048cc7d-f9ec-4c5b-adb3-63285a2384e1\",\n            \"name\": \"MANAGER\"\n        },\n        {\n            \"id\": \"de5509b3-3be1-43ef-abf5-d6482c1fe5d3\",\n            \"name\": \"USER\"\n        }\n    ],\n    \"userId\": \"74ac9a86-c073-44b5-ab4f-f000742fb4a9\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "select-role",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let jsonData = {};\r",
+              "try {\r",
+              "    jsonData = pm.response.json();\r",
+              "} catch (err) {\r",
+              "    console.log(\"⚠️ Response bukan JSON\", err);\r",
+              "}\r",
+              "\r",
+              "if (jsonData.access_token) {\r",
+              "    pm.environment.set(\"token\", jsonData.access_token);\r",
+              "    console.log(\"✅ Token disimpan:\", jsonData.access_token);\r",
+              "} else {\r",
+              "    console.log(\"⚠️ Response ga ada token maupun userId\");\r",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\": \"{{user}}\",\r\n    \"roleId\": \"de5509b3-3be1-43ef-abf5-d6482c1fe5d3\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{HOST}}/auth/select-role",
+          "host": [
+            "{{HOST}}"
+          ],
+          "path": [
+            "auth",
+            "select-role"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "invalid role",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\":\"d3aab197-0b34-48d4-8d3f-d0c238d02934\",\r\n    \"roleId\":\"bd3b7ef0-2615-4771-bd0a-57724bca7763\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/auth/select-role",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "auth",
+                "select-role"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "36"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"24-+Y5AHru6kwfdMT/PwDBT89CkY9M\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 29 Mar 2026 02:41:17 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Invalid role selection\"\n}"
+        },
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\":\"d3aab197-0b34-48d4-8d3f-d0c238d02934\",\r\n    \"roleId\":\"bd3b7ef0-2615-4771-bd0a-57724bca7763\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST}}/auth/select-role",
+              "host": [
+                "{{HOST}}"
+              ],
+              "path": [
+                "auth",
+                "select-role"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "252"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"fc-uCZZeL4QSVy02E/w+ywy+c8Hu28\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 29 Mar 2026 02:41:42 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkM2FhYjE5Ny0wYjM0LTQ4ZDQtOGQzZi1kMGMyMzhkMDI5MzQiLCJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzc0NzUyMTAyLCJleHAiOjE3NzQ4Mzg1MDJ9.YlJi4nVg9utuLZ3zr6QATW8CmWIeDAeYKrRw8JHD8Q4\"\n}"
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

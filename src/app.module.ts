@@ -15,6 +15,10 @@ import { Role } from './entities/role.entity';
 import { Menu } from './entities/menu.entity';
 import { MenusService } from './services/menus.service';
 import { RolesService } from './services/roles.service';
+import { JwtModule } from '@nestjs/jwt';
+import { ConfigService } from '@nestjs/config';
+import { JwtStrategy } from './auth/jwt.strategy';
+import { PassportModule } from '@nestjs/passport';
 
 @Module({
   imports: [
@@ -24,8 +28,18 @@ import { RolesService } from './services/roles.service';
       User,
       Role,
       Menu
-    ])],
+    ]),
+    PassportModule.register({ defaultStrategy: 'jwt' }),
+    JwtModule.registerAsync({
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        secret: configService.get<string>('JWT_SECRET'),
+        signOptions: {
+          expiresIn: configService.get<number>('JWT_EXPIRES') || '1d'
+        },
+      }),
+    })],
   controllers: [AppController,AuthController,MenusController,RolesController,UsersController],
-  providers: [AppService,AuthService,MenusService,RolesService,UsersService],
+  providers: [AppService,AuthService,MenusService,RolesService,UsersService,JwtStrategy],
 })
 export class AppModule {}

@@ -10,7 +10,6 @@ import {
   UpdateDateColumn,
   DeleteDateColumn,
 } from 'typeorm';
-import { BaseEntity } from './base.entity';
 import { Role } from './role.entity';
 
 @Entity('menus')

@@ -10,6 +10,8 @@ export const EnvironmentConfig = ConfigModule.forRoot({
     DB_USER: Joi.string().required(),
     DB_PASSWORD: Joi.string().required(),
     DB_NAME: Joi.string().required(),
-    SYNC_DEFAULT: Joi.boolean().required()
+    SYNC_DEFAULT: Joi.boolean().required(),
+    JWT_SECRET: Joi.string().required(),
+    JWT_EXPIRES: Joi.string().required(),
   }),
 });
