@@ -1,12 +1,23 @@
 import {
   Entity,
-  Column, ManyToOne, OneToMany, ManyToMany, JoinTable,
+  Column,
+  ManyToOne,
+  OneToMany,
+  ManyToMany,
+  JoinTable,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  DeleteDateColumn,
 } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { Role } from './role.entity';
 
 @Entity('menus')
-export class Menu extends BaseEntity {
+export class Menu {
+  @PrimaryGeneratedColumn('increment')
+  id: number;
+
   @Column({ type: 'varchar', length: 100 })
   name: string;
 
@@ -14,7 +25,7 @@ export class Menu extends BaseEntity {
   path: string;
 
   @ManyToOne(() => Menu, menu => menu.children, { nullable: true })
-  parent: Menu;
+  parent: Menu | null;
 
   @OneToMany(() => Menu, menu => menu.parent)
   children: Menu[];
@@ -26,4 +37,13 @@ export class Menu extends BaseEntity {
     inverseJoinColumn: { name: 'role_id', referencedColumnName: 'id' }
   })
   roles: Role[];
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
+
+  @DeleteDateColumn()
+  deleted_at: Date;
 }
